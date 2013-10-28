@@ -1,5 +1,6 @@
 body {
 	background-color: #FFFBED;
+	font-size: 16
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,8 +10,16 @@ h1, h2, h3, h4, h5, h6 {
 .container {
 	background-color: #FFFBED;
 	color: #30394F;
+	font-size: 1.1em;
 }
 
 .fa-terminal {
 	font-size: 1.3em;
+}
+
+.ul-indent {
+   list-style: none;
+   margin-left: 0;
+   padding-left: 1em;
+   text-indent: -0.7em;
 }
