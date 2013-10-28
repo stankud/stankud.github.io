@@ -1,16 +1,16 @@
 body {
-	background-color: #D7DADB;
+	background-color: #FFFBED;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #2C3E50;
+	color: #30394F;
 }
 
 .container {
-	
-	color: #2C3E50;
+	background-color: #FFFBED;
+	color: #30394F;
 }
 
-.icon-terminal {
+.fa-terminal {
 	font-size: 1.3em;
 }
