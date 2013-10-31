@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
+	/*for the fade-in effect*/
+	display:none;
 	background-color: #FFFBED;
 	color: #30394F;
 	font-size: 1.1em;
