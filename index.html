@@ -33,22 +33,23 @@
 	<script src="javascripts/jquery-min.js"></script>
   <script src="javascripts/underscore-min.js"></script>
   <script src="javascripts/backbone-min.js"></script>
-	<script src="javascripts/app.js"></script>
 	<!-- include backbone files -->
 	<script src="javascripts/backbone/models/ProjectModel.js"></script>
 	<script src="javascripts/backbone/views/ProjectView.js"></script>
+	<script src="javascripts/backbone/views/ProjectCollectionView.js"></script>
+	<script src="javascripts/backbone/collections/ProjectCollection.js"></script>
+
+	<script src="javascripts/app.js"></script>
 </head>
 <body>
 	<!-- underscore templates -->
 	<script type="text/template" id="project-template">
-		<li>
 			<i class="fa fa-cogs"></i>
-			<strong>name</strong>: description
-			<p class='ul-indent'>
-				<a href="demo_link"><img class="screen-shot" src="images/workout_screen.png"></a>
-				<p><a href="github_link">Github</a></p>
-		  </p>
-		</li>
+			<strong><%= name %></strong>: <%= description %>
+			<div class='list-indent'>
+				<a href="<%= demo_url %>"><img class="screen-shot" src="<%= image_url %>"></a>
+				<p><a href="<%= github_url %>">Github</a></p>
+		  </div>
 	</script>
 
 
@@ -78,31 +79,7 @@
 		</div>
 		<div class="eight columns">
 			<h3>Web Apps</h3>
-			<ul class='ul-indent' id="projects-list">
-				<li>
-					<i class="fa fa-cogs"></i>
-					<strong>Swap Junky</strong>: Swap your skills for other users' skills.
-					<p class='ul-indent'>
-						<a href="http://swapjunky.heroku.com/"><img class="screen-shot" src="images/swap_junky_screen.png"></a>
-						<p><a href="https://github.com/stankud/swap_junky">Github</a></p>
-				  </p>
-				</li>
-				<li>
-					<i class="fa fa-cogs"></i>
-					<strong>Planetary Defense</strong>: Defend the earth from asteroids and your friend's text messages.
-					<p class='ul-indent'>
-						<a href="http://planetarydefense.herokuapp.com/"><img class="screen-shot" src="images/pd_screen.png"></a>
-						<p><a href="https://github.com/stankud/planetary_defender">Github</a></p>
-					</p>
-				</li>
-				<li>
-					<i class="fa fa-cogs"></i>
-					<strong>Workout App</strong>: Log your workout progress.
-					<p class='ul-indent'>
-						<a href="http://workout-app.herokuapp.com/"><img class="screen-shot" src="images/workout_screen.png"></a>
-						<p><a href="https://github.com/stankud/workout">Github</a></p>
-					</p>
-				</li>
+			<ul class='list-indent' id="project-list">
 			</ul>
 		</div>
 		

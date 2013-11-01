@@ -1,24 +1,26 @@
-var app = app || {}
+var app = app || {};
 
 app.ProjectView = Backbone.View.extend({
+	tagName: 'li',
 	initialize: function(){
 		this.render();
 	},
 
 	render: function(){
-		var template = _.template($("#project-template").html(), {});
-		console.log(template);
+		var template = _.template($("#project-template").html());
+		template = template(this.model.toJSON());
 		this.$el.append( template );
 	},
 
 	events: {
 		"mouseover .screen-shot": "fadeIn",
-		"mousout": "fadeOut"
+		"mouseout .screen-shot": "fadeOut"
 	},
 	fadeIn: function ( event ){
-		console.log('fadein');
+		console.log(event);
+		$(event.currentTarget).animate({opacity: 1});
 	},
-	fadeIn: function ( event ){
-		console.log('fadeout');
+	fadeOut: function ( event ){
+		$(event.currentTarget).animate({opacity: 0.4});
 	}
 });
