@@ -17,7 +17,6 @@ app.ProjectView = Backbone.View.extend({
 		"mouseout .screen-shot": "fadeOut"
 	},
 	fadeIn: function ( event ){
-		console.log(event);
 		$(event.currentTarget).animate({opacity: 1});
 	},
 	fadeOut: function ( event ){

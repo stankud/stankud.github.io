@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #FFFBED;
 	color: #30394F;
 	font-size: 1.1em;
+	overflow: none;
 }
 
 .fa-terminal {
@@ -28,4 +29,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .screen-shot {
 	opacity: 0.4;
+}
+
+/* d3 effects */
+.skill {
+	margin-left: -9999px;
+}
+
+.margin-top {
+	margin-top: 20px;
+}
+
+.spacing {
+	margin: 0 90px;
+}
+
+.name {
+	margin-left: -90px;
 }

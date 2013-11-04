@@ -35,6 +35,7 @@
 	<script src="javascripts/jquery-min.js"></script>
   <script src="javascripts/underscore-min.js"></script>
   <script src="javascripts/backbone-min.js"></script>
+  <script src="javascripts/d3.v3.min.js"></script>
 	<!-- include backbone files -->
 	<script src="javascripts/backbone/models/ProjectModel.js"></script>
 	<script src="javascripts/backbone/views/ProjectView.js"></script>
@@ -55,29 +56,35 @@
 	<!-- container -->
 	<div id="main" class="container">
 		<div class="sixteen columns">
-			<h1 class="remove-bottom" style="margin-top: 40px">Stan Kudrow </h1>
+			<h1 class="remove-bottom margin-top name">Stan<span class="spacing"> </span>Kudrow </h1>
 			<h5>Developer/Skydiver</h5>
-			<hr />
+			<!-- <hr /> -->
 		</div>
 		<div class="sixteen columns">
 			<img src="images/skydiving_mid.jpg"/>
+		</div>
+		<div class="eight columns">
+			<h3>What can I do?</h3>
+			<ul>
+				<li><i class="fa fa-terminal skill"></i> Ruby on Rails</li>
+				<li><i class="fa fa-terminal skill"></i> Javascript/jQuery/Backbone.js</li>
+				<li><i class="fa fa-terminal skill"></i> MySQL/PostgreSQL</li>
+				<li><i class="fa fa-terminal skill"></i> HTML5/CSS3
+				<li><i class="fa fa-terminal skill"></i> Ubuntu/MacOS/Windows
+			</ul>
 		</div>
 		<div class="eight columns">
 			<h3>Who am I?</h3>
 			<p>
 				Hi, I'm Stan. I was born in Ukraine and moved to the U.S. when I was 12 years old. I enjoy coding, skydiving and all kinds of icecream(Ben & Jerry's Red Velvet Cake is currently my favorite).
 			</p>
-			<h3>Skills</h3>
-			<ul>
-				<li><i class="fa fa-terminal"></i> Ruby on Rails</li>
-				<li><i class="fa fa-terminal"></i> Javascript/jQuery/Backbone.js</li>
-				<li><i class="fa fa-terminal"></i> MySQL/PostgreSQL</li>
-				<li><i class="fa fa-terminal"></i> HTML5/CSS3
-				<li><i class="fa fa-terminal"></i> Ubuntu/MacOS/Windows
-			</ul>
 		</div>
-		<div class="eight columns">
-			<h3>Web Apps</h3>
+		<hr />
+		<div class="sixteen columns">
+			<h3>What did I build?</h3>
+		<div class="twelve columns offset-by-four">
+			
+
 			<ul class='list-indent' id="project-list">
 			</ul>
 		</div>

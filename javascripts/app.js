@@ -3,13 +3,20 @@ var app = app || {};
 $(function() {
 	// fade the page in
 	$('.container').fadeIn('slow');
-	// fade in/out screenshots
-	$('.screen-shot').on('mouseover', function(){
-		$(this).animate({opacity: 1});
-	});
-	$('.screen-shot').on('mouseout', function(){
-		$(this).animate({opacity: 0.4});
-	});
+	// d3 skills
+	d3.selectAll('.skill').transition()
+	.duration(1000)
+	.delay(function(d,i){ return i * 350; })
+	.style('margin-left', '0px');
+
+	d3.select('.name').transition()
+	.duration(2000)
+	.style('margin-left', '0px');
+
+	d3.select('.spacing').transition()
+	.duration(2000)
+	.style('margin', '0px 0px');
+
 	// projects data
 	projects = [
 		{
