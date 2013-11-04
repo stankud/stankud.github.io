@@ -41,9 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spacing {
-	margin: 0 90px;
+	margin: 0 45px;
 }
 
 .name {
-	margin-left: -90px;
+	margin-left: -45px;
 }
