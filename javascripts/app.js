@@ -19,26 +19,33 @@ $(function() {
 
 	// projects data
 	projects = [
-		{
-				name: "Swap Junky",
-				description: "Swap your skills for other users' skills.",
-				demo_url: "http://swapjunky.heroku.com/",
-				github_url: "https://github.com/stankud/swap_junky",
-				image_url: "images/swap_junky_screen.png"
+			{
+				name: "Rynoq",
+				description: "Scare and excite the financial sector with an animation of their role.",
+				demo_url: "http://rynoq.com/stocks",
+				github_url: "https://github.com/stankud/Rynoq",
+				image_url: "images/ryn_550.png"
 			},
 			{
 				name: "Planetary Defense",
 				description: "Defend the earth from asteroids and your friend's text messages.",
-				demo_url: "http://planetarydefense.herokuapp.com/",
+				demo_url: "http://planetarydefendr.com/",
 				github_url: "https://github.com/stankud/planetary_defender",
-				image_url: "images/pd_screen.png"
+				image_url: "images/pd_screen_550.png"
+			},
+			{
+				name: "Swap Junky",
+				description: "Swap your skills for other users' skills.",
+				demo_url: "http://swapjunky.heroku.com/",
+				github_url: "https://github.com/stankud/swap_junky",
+				image_url: "images/sj_screen_550.png"
 			},
 			{
 				name: "Workout App",
 				description: "Log your workout progress.",
 				demo_url: "http://workout-app.herokuapp.com/",
 				github_url: "https://github.com/stankud/workout",
-				image_url: "images/workout_screen.png"
+				image_url: "images/w_screen_550.png"
 			}
 	]
 	// set up a project collection and add data
