@@ -7,6 +7,10 @@ h1, h2, h3, h4, h5, h6 {
 	color: #30394F;
 }
 
+h3 {
+	margin-bottom: 30px;
+}
+
 .container {
 	/*for the fade-in effect*/
 	display:none;
