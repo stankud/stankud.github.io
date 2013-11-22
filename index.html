@@ -46,12 +46,22 @@
 <body>
 	<!-- underscore templates -->
 	<script type="text/template" id="project-template">
+		<div class="ten columns">
 			<i class="fa fa-cogs"></i>
 			<strong><%= name %></strong>: <%= description %>
 			<div class='list-indent'>
 				<a href="<%= demo_url %>" target="_blank"><img class="screen-shot" src="<%= image_url %>"></a>
 				<p><a href="<%= github_url %>">Github</a></p>
 		  </div>
+		 </div>
+		 <div class="five columns">
+		 	<h4>Technology used:</h4>
+		 	<ul>
+					<li><i class="fa fa-terminal"></i><%= tech1 %></li>
+					<li><i class="fa fa-terminal"></i><%= tech2 %></li>
+					<li><i class="fa fa-terminal"></i><%= tech3 %></li>
+			</ul>
+		 </div>
 	</script>
 	<!-- container -->
 	<div id="main" class="container">
@@ -63,30 +73,25 @@
 		<div class="sixteen columns">
 			<img src="images/skydiving_mid.jpg"/>
 		</div>
-		<div class="eight columns">
+		<div class="six columns offset-by-two">
 			<h3>What can I do?</h3>
 			<ul>
-				<li><i class="fa fa-terminal skill"></i> Ruby on Rails</li>
+				<li><i class="fa fa-terminal skill"></i> Ruby on Rails/PHP</li>
 				<li><i class="fa fa-terminal skill"></i> Javascript/jQuery/Backbone.js</li>
-				<li><i class="fa fa-terminal skill"></i> MySQL/PostgreSQL</li>
-				<li><i class="fa fa-terminal skill"></i> HTML5/CSS3
+				<li><i class="fa fa-terminal skill"></i> MySQL/PostgreSQL/MongoDB</li>
+				<li><i class="fa fa-terminal skill"></i> HTML5/CSS3/Sass
 				<li><i class="fa fa-terminal skill"></i> Ubuntu/MacOS/Windows
 			</ul>
 		</div>
-		<div class="eight columns">
+		<div class="six columns">
 			<h3>Who am I?</h3>
 			<p>
 				Hi, I'm Stan. I was born in Ukraine and moved to the U.S. when I was 12 years old. I enjoy coding, skydiving and all kinds of icecream(Ben & Jerry's Red Velvet Cake is currently my favorite).
 			</p>
 		</div>
 		<hr />
-		<div class="sixteen columns">
-			<h3>What did I build?</h3>
-		<div class="sixtee columns">
-			<ul class='list-indent' id="project-list">
-			</ul>
-		</div>
-		
+		<h3>What did I build?</h3>
+		<ul class='list-indent' id="project-list"></ul>	
 	</div>
 <!-- End Document
 ================================================== -->

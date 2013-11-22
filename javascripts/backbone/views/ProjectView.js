@@ -9,7 +9,7 @@ app.ProjectView = Backbone.View.extend({
 	render: function(){
 		var template = _.template($("#project-template").html());
 		template = template(this.model.toJSON());
-		this.$el.append( template );
+		this.$el.addClass('sixteen columns').append( template );
 	},
 
 	events: {
