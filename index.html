@@ -1,97 +1,355 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stan Kudrow • Staff Data Engineer</title>
+  <meta name="description" content="Staff Data Engineer with 10+ years building data platforms, lakehouses, and cloud infrastructure. Currently focused on agentic ETL and Apache Iceberg at scale.">
+  <meta name="author" content="Stan Kudrow">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Stan Kudrow • Senior Data Engineer">
+  <meta property="og:description" content="Data engineer focused on scalable distributed systems and modern data infrastructure.">
+  <!-- og:image can be added later with a professional headshot or abstract graphic -->
+  <meta property="og:url" content="https://stankudrow.com">
+  <meta name="twitter:card" content="summary_large_image">
 
-	<!-- Basic Page Needs
-  ================================================== -->
-	<meta charset="utf-8">
-	<title>Stank Kudrow's Porfolio</title>
-	<meta name="description" content="porfolio page">
-	<meta name="author" content="Stan Kudrow">
-
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="stylesheets/base.css">
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/layout.css">
-	<link rel="stylesheet" href="stylesheets/styles.css">
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	
-	<!-- Font awesome -->
-	<link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.min.css">
-	<!-- JS
-  ================================================== -->
-	<script src="javascripts/jquery-min.js"></script>
-  <script src="javascripts/underscore-min.js"></script>
-  <script src="javascripts/backbone-min.js"></script>
-  <script src="javascripts/d3.v3.min.js"></script>
-	<!-- include backbone files -->
-	<script src="javascripts/backbone/models/ProjectModel.js"></script>
-	<script src="javascripts/backbone/views/ProjectView.js"></script>
-	<script src="javascripts/backbone/views/ProjectCollectionView.js"></script>
-	<script src="javascripts/backbone/collections/ProjectCollection.js"></script>
-	<script src="javascripts/app.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.ico">
+  
+  <style>
+    .nav-link .nav-indicator {
+      display: inline-block;
+      height: 1px;
+      width: 2rem;
+      background-color: var(--color-zinc-600);
+      margin-right: 1rem;
+      transition: width 0.2s ease, background-color 0.2s ease;
+    }
+    .nav-link:hover .nav-indicator,
+    .nav-link:focus-visible .nav-indicator {
+      width: 4rem;
+      background-color: var(--color-zinc-200);
+    }
+    .nav-link:hover .nav-text,
+    .nav-link:focus-visible .nav-text {
+      color: var(--color-zinc-200);
+    }
+    .nav-link.active .nav-indicator {
+      width: 4rem;
+      background-color: var(--color-zinc-200);
+    }
+    .nav-link.active .nav-text {
+      color: var(--color-zinc-200);
+    }
+  </style>
 </head>
-<body>
-	<!-- underscore templates -->
-	<script type="text/template" id="project-template">
-		<div class="ten columns">
-			<i class="fa fa-cogs"></i>
-			<strong><%= name %></strong>: <%= description %>
-			<div class='list-indent'>
-				<a href="<%= demo_url %>" target="_blank"><img class="screen-shot" src="<%= image_url %>"></a>
-				<p><a href="<%= github_url %>">Github</a></p>
-		  </div>
-		 </div>
-		 <div class="five columns">
-		 	<h4>Technology used:</h4>
-		 	<ul>
-					<li><i class="fa fa-terminal"></i><%= tech1 %></li>
-					<li><i class="fa fa-terminal"></i><%= tech2 %></li>
-					<li><i class="fa fa-terminal"></i><%= tech3 %></li>
-			</ul>
-		 </div>
-	</script>
-	<!-- container -->
-	<div id="main" class="container">
-		<header class="sixteen columns">
-			<h1 class="remove-bottom margin-top name">Stan<span class="spacing"> </span>Kudrow </h1>
-			<h5>Developer/Skydiver</h5>
-		</header>
-		<figure class="sixteen columns">
-			<img src="images/skydiving_mid.jpg" alt="People skydiving from an airplane" />
-		</figure>
-		<!-- about me -->
-		<section class="six columns offset-by-two">
-			<h3>What can I do?</h3>
-			<ul>
-				<li><i class="fa fa-terminal skill"></i> Python/Go/SQL/JavaScript/Bash</li>
-				<li><i class="fa fa-terminal skill"></i> Apache Airflow/Spark/Kafka</li>
-				<li><i class="fa fa-terminal skill"></i> Snowflake/Deltalake/Redshift/BigQuery</li>
-				<li><i class="fa fa-terminal skill"></i> PostgreSQL/MySQL</li>
-				<li><i class="fa fa-terminal skill"></i> Redis/DynamoDB</li>
-			</ul>
-		</section>
-		<section class="six columns">
-			<h3>Who am I?</h3>
-			<p>
-				I am a software engineer focused on Data and Distributed Systems with
-				experience in ETL pipelines, Data APIs, Microservices, Lambda Architecture and Data Warehousing.
-			</p>
-		</section>
-	</div>
-<!-- End Document
-================================================== -->
+<body class="bg-slate-900 text-zinc-200 font-sans antialiased leading-relaxed">
+
+  <div class="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+    <div class="lg:flex lg:justify-between lg:gap-4">
+
+      <!-- Left Sidebar (Brittany Chiang style) -->
+      <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+        <div>
+          <h1 class="text-4xl font-bold tracking-tight text-zinc-200 sm:text-5xl">
+            <a href="/">Stan Kudrow</a>
+          </h1>
+          <h2 class="mt-3 text-lg font-medium tracking-tight text-zinc-200 sm:text-xl">
+            Data Platform Engineer
+          </h2>
+          <p class="mt-4 max-w-xs leading-normal text-zinc-400">
+            I build reliable, scalable data platforms and agentic data systems.
+          </p>
+
+          <nav class="nav hidden lg:block" aria-label="In-page jump links">
+            <ul class="mt-16 w-max" id="desktop-nav">
+              <li>
+                <a class="nav-link group flex items-center py-3" href="#about" data-section="about">
+                  <span class="nav-indicator"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-zinc-500">About</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link group flex items-center py-3" href="#experience" data-section="experience">
+                  <span class="nav-indicator"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-zinc-500">Experience</span>
+                </a>
+              </li>
+              <li>
+                <a class="nav-link group flex items-center py-3" href="#projects" data-section="projects">
+                  <span class="nav-indicator"></span>
+                  <span class="nav-text text-xs font-bold uppercase tracking-widest text-zinc-500">Projects</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
+          <li class="mr-5 shrink-0 text-xs">
+            <a class="block text-zinc-400 hover:text-zinc-200 transition-colors" href="https://github.com/stankud" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)" title="GitHub">
+              <span class="sr-only">GitHub</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </a>
+          </li>
+          <li class="mr-5 shrink-0 text-xs">
+            <a class="block text-zinc-400 hover:text-zinc-200 transition-colors" href="https://www.linkedin.com/in/xstj5devsbvb/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn (opens in a new tab)" title="LinkedIn">
+              <span class="sr-only">LinkedIn</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <!-- Main Content -->
+      <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+
+      <!-- About -->
+      <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <h2 class="text-3xl font-semibold tracking-tight mb-6 lg:sr-only">About</h2>
+        <div class="max-w-3xl text-zinc-400 leading-relaxed space-y-5 text-[15px]">
+          <p>
+            I'm a data platform engineer with 10+ years of experience designing and building the systems that
+            move, transform, and surface data at scale — across AI, fintech, media, and high-scale analytics environments.
+          </p>
+          <p>
+            These days I'm drawn to the intersection of data engineering and AI: agentic pipelines, schema governance
+            with human-in-the-loop oversight, and evaluation frameworks that make it safe to iterate quickly on
+            complex transformations.
+          </p>
+          <p>
+            I care about building platform foundations that teams can actually trust — reliable, observable, and
+            easy to extend, so engineers spend less time firefighting and more time building.
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <h2 class="text-3xl font-semibold tracking-tight mb-10 lg:sr-only">Experience</h2>
+
+        <div class="space-y-14">
+          
+          <!-- Merged Role (Figure + current) -->
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-semibold text-lg">Staff Data Engineer · Figure</h3>
+              <span class="text-sm text-zinc-500">2021 – Present</span>
+            </div>
+            <p class="text-zinc-400 leading-relaxed mb-4 text-[15px]">
+              Architected and owned the company's core data platform — a multi-stage lakehouse with standardized
+              ingestion, automated schema evolution, and self-serve onboarding for new data sources. Later led the
+              development of agentic systems that apply LLMs to propose and validate data transformations end-to-end,
+              turning a manual, error-prone process into one that scales without proportional headcount.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="tech-pill">Apache Iceberg</span>
+              <span class="tech-pill">Airflow</span>
+              <span class="tech-pill">Kubernetes</span>
+              <span class="tech-pill">Pulumi</span>
+              <span class="tech-pill">LLMs / Agents</span>
+            </div>
+          </div>
+
+          <!-- Microsoft -->
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-semibold text-lg">Software Engineer · Microsoft</h3>
+              <span class="text-sm text-zinc-500">2020 – 2021</span>
+            </div>
+            <p class="text-zinc-400 leading-relaxed mb-4 text-[15px]">
+              Defined the engineering patterns and infrastructure standards for a large-scale data platform migration,
+              establishing the technical foundation the team built on. Drove the performance work that made the
+              new platform a clear step forward — not just a lateral move.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="tech-pill">PySpark</span>
+              <span class="tech-pill">Azure</span>
+              <span class="tech-pill">Terraform</span>
+            </div>
+          </div>
+
+          <!-- Vice Media -->
+          <div>
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-semibold text-lg">Lead Data Engineer · Vice Media</h3>
+              <span class="text-sm text-zinc-500">2017 – 2020</span>
+            </div>
+            <p class="text-zinc-400 leading-relaxed mb-4 text-[15px]">
+              Led the modernization of Vice Media's data infrastructure — introducing the orchestration tooling,
+              building the company's foundational data lakes, and driving the migration away from legacy warehouses.
+              Left the data org with a platform that could scale with the business rather than against it.
+            </p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="tech-pill">Airflow</span>
+              <span class="tech-pill">AWS</span>
+              <span class="tech-pill">Snowflake</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <h2 class="text-3xl font-semibold tracking-tight mb-10 lg:sr-only">Projects</h2>
+
+        <div class="grid grid-cols-1 gap-6">
+
+          <!-- HIDDEN: remove display:none when ready to publish -->
+          <div class="project-card group" style="display:none">
+            <div class="p-8">
+              <h3 class="font-semibold text-xl tracking-tight mb-4">Agentic ETL Proposal Pipeline</h3>
+              <p class="text-zinc-400 leading-relaxed mb-6 text-[15px]">
+                Built an agentic pipeline that runs inference over raw tables to surface schema improvement
+                opportunities — type narrowing, timestamp normalization, redundant column detection — generates
+                natural-language justifications for each proposal, and routes approved changes directly into
+                Airflow and Iceberg workflows. Turned schema governance from a manual review process into a
+                continuously running, self-improving system.
+              </p>
+              <div class="text-sm font-semibold text-teal-400 mb-6">
+                New database onboarding: 5 days → 1 day
+              </div>
+              <div class="flex flex-wrap gap-2 text-sm">
+                <span class="tech-pill">Apache Iceberg</span>
+                <span class="tech-pill">Airflow</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">LLMs / Agents</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card group">
+            <div class="p-8">
+              <h3 class="font-semibold text-xl tracking-tight mb-4">Agentic Evaluation Framework</h3>
+              <p class="text-zinc-400 leading-relaxed mb-6 text-[15px]">
+                Built an evaluation system that leverages agents to automatically seed test data into Iceberg tables,
+                propose schema and transformation changes, execute full pipelines, and validate outputs. This approach
+                made it dramatically faster and safer to iterate on complex data transformations. The verifiable
+                output loop also unlocked agentic coding workflows, giving AI agents a reliable signal to iterate against.
+              </p>
+              <div class="text-sm font-semibold text-teal-400 mb-6">
+                Enabled safe, automated iteration on LLM-driven pipelines at scale
+              </div>
+              <div class="flex flex-wrap gap-2 text-sm">
+                <span class="tech-pill">Apache Iceberg</span>
+                <span class="tech-pill">Airflow</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">LLMs / Agents</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card group">
+            <div class="p-8">
+              <h3 class="font-semibold text-xl tracking-tight mb-4">Unified Data Platform</h3>
+              <p class="text-zinc-400 leading-relaxed mb-6 text-[15px]">
+                Designed and built a platform to unify data scattered across 100+ microservices into a single,
+                queryable warehouse. The system automated schema evolution, infrastructure provisioning, and
+                onboarding — so adding a new service went from a week of manual work to a two-hour self-serve process.
+              </p>
+              <div class="text-sm font-semibold text-teal-400 mb-6">
+                New service onboarding: 1 week → 2 hours
+              </div>
+              <div class="flex flex-wrap gap-2 text-sm">
+                <span class="tech-pill">BigQuery</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Airflow</span>
+                <span class="tech-pill">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card group">
+            <div class="p-8">
+              <h3 class="font-semibold text-xl tracking-tight mb-4">Custom Event Tracking Platform</h3>
+              <p class="text-zinc-400 leading-relaxed mb-6 text-[15px]">
+                Replaced a costly third-party event tracking platform with a custom-built system on AWS —
+                Kinesis for ingestion, API Gateway and Lambda for collection, and Redshift for storage and
+                analysis. Gave the analytics team full ownership of their event data pipeline while
+                dramatically cutting infrastructure spend.
+              </p>
+              <div class="text-sm font-semibold text-teal-400 mb-6">
+                Infrastructure costs reduced by 75%
+              </div>
+              <div class="flex flex-wrap gap-2 text-sm">
+                <span class="tech-pill">AWS Kinesis</span>
+                <span class="tech-pill">Lambda</span>
+                <span class="tech-pill">API Gateway</span>
+                <span class="tech-pill">Redshift</span>
+                <span class="tech-pill">Node.js</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    if (new URLSearchParams(window.location.search).has('preview')) {
+      document.querySelectorAll('[style*="display:none"]').forEach(el => el.style.display = '');
+    }
+  </script>
+
+  <!-- Scrollspy Script for Desktop Sidebar -->
+  <script>
+    const sections = ['about', 'experience', 'projects'];
+    const navLinks = document.querySelectorAll('#desktop-nav .nav-link');
+
+    function setActiveLink(currentSection) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.section === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      let currentSection = '';
+
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          currentSection = entry.target.id;
+        }
+      });
+
+      if (currentSection) {
+        setActiveLink(currentSection);
+      }
+    }, {
+      rootMargin: '0px 0px -60% 0px',
+      threshold: [0.3, 0.6, 0.9]
+    });
+
+    sections.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    // Set initial active link on page load
+    window.addEventListener('load', () => {
+      const firstVisible = sections.find(id => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        const rect = el.getBoundingClientRect();
+        return rect.top <= 200;
+      });
+      if (firstVisible) {
+        setActiveLink(firstVisible);
+      }
+    });
+  </script>
+
+
 </body>
 </html>
