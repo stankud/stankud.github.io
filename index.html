@@ -324,26 +324,27 @@
     }
 
     const observer = new IntersectionObserver((entries) => {
-      let currentSection = '';
-
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          currentSection = entry.target.id;
+          setActiveLink(entry.target.id);
         }
       });
-
-      if (currentSection) {
-        setActiveLink(currentSection);
-      }
     }, {
-      rootMargin: '0px 0px -60% 0px',
-      threshold: [0.3, 0.6, 0.9]
+      rootMargin: '0px 0px -50% 0px',
+      threshold: 0
     });
 
     sections.forEach(id => {
       const section = document.getElementById(id);
       if (section) observer.observe(section);
     });
+
+    // Activate last section when scrolled to the bottom of the page
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+        setActiveLink(sections[sections.length - 1]);
+      }
+    }, { passive: true });
 
     // Set initial active link on page load
     window.addEventListener('load', () => {
