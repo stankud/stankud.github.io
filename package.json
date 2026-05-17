@@ -1,0 +1,17 @@
+{
+  "name": "stankud.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stan Kudrow - Professional Portfolio",
+  "scripts": {
+    "build:css": "tailwindcss -i src/input.css -o style.css --minify",
+    "build": "npm run build:css",
+    "dev": "tailwindcss -i src/input.css -o style.css --watch",
+    "screenshot": "node scripts/screenshot.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "playwright": "^1.60.0",
+    "tailwindcss": "^4.3.0"
+  }
+}
